@@ -9866,11 +9866,11 @@ font-size: .8em;
 
 #key{
 font-family: 'Calibri,Helvetica,Arial,sans-serif';
-margin-top: 1.0em;
-background-color: #5cb85c;
+margin-top: 0.0em;
+background-color: #2e7778;
 border-radius: 3px;
 color: #fff;
 padding: 2px 5px;
-border-color: #4cae4c;
-font-size: .6em;
+border-color: #2e7778;
+font-size: .7em;
 }
