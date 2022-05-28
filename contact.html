@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="shortcut icon" href="/images/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="js/bootstrap.min.css">
+		<link rel="stylesheet" href="scss/style.scss">
 	</head>
 	<body>
 		<div class="container pt-5">
@@ -39,12 +40,18 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="fa fa-bars"></span> Menu
 				</button>
-				<form action="#" class="searchform order-lg-last">
-					<div class="form-group d-flex">
-						<input type="text" class="form-control pl-3" placeholder="Search">
-						<button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+				<a class="mk-search-trigger mk-fullscreen-trigger" href="#" style="display: table-cell; padding: 0 30px 0 600px; vertical-align: middle;" id="search-button-listener">
+					<div id="search-button"><i class="fa fa-search"></i></div>
+				</a>
+				<div class="mk-fullscreen-search-overlay" id="mk-search-overlay">
+					<a href="#" class="mk-fullscreen-close" id="mk-fullscreen-close-button"><i class="fa fa-times"></i></a>
+					<div id="mk-fullscreen-search-wrapper">
+						<form method="get" id="mk-fullscreen-searchform" action="">
+							<input type="text" value="" placeholder="Search..." id="mk-fullscreen-search-input">
+							<i class="fa fa-search fullscreen-search-icon"><input value="" type="submit"></i>   
+						</form>	
 					</div>
-				</form>
+				</div>
 				<div class="collapse navbar-collapse" id="ftco-nav">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
@@ -85,204 +92,19 @@
 									</div> 
 									<div id="form-message-success" class="mb-4">
 										<div align="justify" style="font-size: 98%;">
-											<p> My name is Half and if you want to contact me, you can do it through the e-mail address fxtq@protonmail.com.</p>
-											<br>
-											<p>If you want to download my PGP key, go <a href="key/Half-PGP-Key.asc"><u>here</u></a>.</p><br>
-											<pre id="pgp" style="display: inline-block; font-size: 90%; text-align: left; border-radius: 0 !important; background-color: #fefefe">-----BEGIN PGP PRIVATE KEY BLOCK-----
-
-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
-Z+gqXs1daf9jB7M5jC9hMro+mDj3DWy/HVdovDvMua5z6PGKbhQFTMnNJGhhbGYg
-KENvbnRhY3QpIDxmeHRxQHByb3Rvbm1haWwuY29tPsLBegQTAQoAJAUCYlWS8QIb
-LwMLCQcDFQoIAh4BAheAAxYCAQIZAQUJAAAAAAAKCRBI+Wq5NvlVvvzrD/4olqm+
-Uku5M1PakrAI9/M9oYjVtwWItp0uT2BsXcLLjmYNGQ8CU6kejvqFNuxazYnaDpxr
-9izN8ycwjLE23IN/wfjI4fGDe5DUx/SvZEi+4nhAb4lQ84ZquFisJMx0TM1iZtun
-kZD9CLX7LHg2L4+nJvE/mxuKTDw7gX65eMVFb8ysxzDzLYycAxBBA6BX9KLlQZKo
-SR++o8Kbepu+gVIKRKEG65bI7VrO/f3dyzCGheLgJegJdJFH0XzEhzsllvz9pgPd
-KQNBPqUFYPX54mDyBOYMohECxrv337+phr870D6k2BuYvhUuoIuS7w0Ijb2Rj8Ll
-k70up39MAc34nnTrj5+YmTsWA0nIylZIR1BUEN6orfic0AUBYGNa4GTHKlBufn6k
-lZXGTvBClJ9frqGP5IYre2ARGamVPCAYV0nBKR+RGXseUpT1vdLPZca8F7TSpSyc
-siz0fTVKHsIzgY7e9oF7Sul+SO9iKYYke9KNHone/pR2jQh3/LEfbqkw1E93ItFR
-UvzLjMaPy0hyj/TN5YVnilqQ6Ezde7N2J32hpNlCv5yC6aJu7QrYWqY6OK86sNGz
-TMbBdXtaAjQwtlNhTRamPjE+TpZj+PAyN2siQOYKH3DPF2NCM3G3NV29i5YAnBYz
-8is1Hb8OmtkkWi8kq0SgTkOlf3USQKjeS+IVmsfGhgRiVZLxARAA3rNdL6msGaQB
-P+IEjt4rspaYLMyuoztFbUUgXYVutbhp9rRgqvk3prZPknSmxx+9FKQl6uB/fv2K
-Cau059N3yPA+ul8tehX20apUK75zClierTyZooIcOilavngn6tiqPaNyD/ne33ZU
-s3yVFyZTd23S1HWwAgcFmDFODDsutTWEA86RZWO9hve9Q+y1BpMtGfSa64b+Xwgm
-pmFWzLKIa9hndUcJ4ZPxtqhAMfKA7aZGM0OLnZZNQJ6vTIyQlgC7sskVTDPD85Iu
-J4HCPYG5+Awfr6Kevm7ZBp7zaDVRkm4GjyTp6XW7EuB3z1ltN2LMgM8mq4E5drlo
-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
-=G3p3
------END PGP PRIVATE KEY BLOCK-----
-											</pre>
+											<p>If you feel like supporting and helping with the content you can do so by contacting me via email or from my PGP key.</p>
+											<h6>Email &#8649; <a id="email">fxtq@protonmail.com</a></h6>
+											<h6>PGP key &#8649; <a id="ab" href="/key/Half-PGP-Key.asc"><u>Download Here</u></a></h6>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-5 d-flex align-items-stretch">
-							<div id="map">
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	</div>
 		</section>
-
+		<br></br><br></br><br></br><br></br><br></br><br></br>
 		<footer class="footer">
 			<div class="container-fluid px-lg-5">
 				<div class="row">
@@ -304,7 +126,7 @@ hMB/RYz/5jpSIqWl+FwR2c82tqTMA8GPFsa0zAgJDVJVz2f+vaHSgahLQUF82Z9l
 		</footer>  
 
  		<!-- loader -->
-		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#468499"/></svg></div>
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#0e2f44"/></svg></div>
 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -318,5 +140,7 @@ hMB/RYz/5jpSIqWl+FwR2c82tqTMA8GPFsa0zAgJDVJVz2f+vaHSgahLQUF82Z9l
 		<script src="js/jquery.magnific-popup.min.js"></script>
 		<script src="js/scrollax.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/search.js"></script>
+		
 	</body>
 </html>

@@ -1,5 +1,8 @@
 @import 'bootstrap/bootstrap';
 @import 'bootstrap/variables';
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 $font-primary: 'Poppins',Arial, sans-serif;
 
@@ -241,52 +244,6 @@ h1, h2, h3, h4, h5,
 		}
 	}
 }
-
-
-.searchform{
-	height:46px;
-	border: 1px solid rgba(255,255,255,.1);
-	overflow: hidden;
-	@include border-radius(5px);
-	.form-control{
-		width: calc(100% - 46px);
-		border: none;
-		background: #fff !important;
-		color: rgba(0,0,0,.7) !important;
-		font-size: 14px;
-		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		  color: rgba(0,0,0,.7) !important;
-		}
-		&::-moz-placeholder { /* Firefox 19+ */
-		  color: rgba(0,0,0,.7) !important;
-		}
-		&:-ms-input-placeholder { /* IE 0+ */
-		  color: rgba(0,0,0,.7) !important;
-		}
-		&:-moz-placeholder { /* Firefox 18- */
-		  color: rgba(0,0,0,.7) !important;
-		}
-	}
-	.form-control {
-		height: 46px!important;
-		background: $white!important;
-		color: $black!important;
-		font-size: 14px;
-		border-radius: 0px;
-		box-shadow: none!important;
-		&:focus, &:active {
-			border-color: $black;
-		}
-	}
-	.search{
-		width: 46px;
-		height: 46px;
-		span{
-			font-size: 20px;
-		}
-	}
-}
-
 
 
 .hero-wrap{
@@ -2102,22 +2059,6 @@ textarea.form-control {
 				}
 			}
 		}
-	}
-}
-
-.search-form {
-	.form-group {
-		position: relative;
-		input {
-			padding-right: 50px;
-			font-size: 14px;
-		}
-	}
-	.icon {
-		position: absolute;
-		top: 50%;
-		right: 20px;
-		transform: translateY(-50%);
 	}
 }
 

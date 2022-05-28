@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="/css/flaticon.css">
 		<link rel="stylesheet" href="/css/icomoon.css">
 		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/scss/style.scss">
 		<link rel="shortcut icon" href="/images/favicon.ico">
 	</head>
 	<body>
@@ -38,12 +39,18 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="fa fa-bars"></span> Menu
 				</button>
-				<form action="#" class="searchform order-lg-last">
-					<div class="form-group d-flex">
-					<input type="text" class="form-control pl-3" placeholder="Search">
-					<button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+				<a class="mk-search-trigger mk-fullscreen-trigger" href="#" style="display: table-cell; padding: 0 30px 0 600px; vertical-align: middle;" id="search-button-listener">
+					<div id="search-button"><i class="fa fa-search"></i></div>
+				</a>
+				<div class="mk-fullscreen-search-overlay" id="mk-search-overlay">
+					<a href="#" class="mk-fullscreen-close" id="mk-fullscreen-close-button"><i class="fa fa-times"></i></a>
+					<div id="mk-fullscreen-search-wrapper">
+						<form method="get" id="mk-fullscreen-searchform" action="">
+							<input type="text" value="" placeholder="Search..." id="mk-fullscreen-search-input">
+							<i class="fa fa-search fullscreen-search-icon"><input value="" type="submit"></i>   
+						</form>
 					</div>
-				</form>
+				</div>
 				<div class="collapse navbar-collapse" id="ftco-nav">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
@@ -180,7 +187,7 @@
 		</footer>
     
 		<!-- loader -->
-		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#468499"/></svg></div>
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#0e2f44"/></svg></div>
 	
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/jquery-migrate-3.0.1.min.js"></script>
@@ -194,6 +201,7 @@
 		<script src="/js/jquery.magnific-popup.min.js"></script>
 		<script src="/js/scrollax.min.js"></script>
 		<script src="/js/main.js"></script>
+		<script src="/js/search.js"></script>
     
 	</body>
 </html>
