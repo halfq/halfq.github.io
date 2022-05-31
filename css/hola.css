@@ -1,113 +1,50 @@
-.container-search {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 300px;
-  height: 50px;
+.limiter {
+  width: 100%;
+  margin: 0 auto;
 }
-.container-search .search {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  background: #0e2f44; /* crimson */
-  border-radius: 50%;
-  transition: all 1s;
-  z-index: 4;
-  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+
+.container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #c850c0;
+  background: -webkit-linear-gradient(45deg,#4158d0,#c850c0);
+  background: -o-linear-gradient(45deg,#4158d0,#c850c0);
+  background: -moz-linear-gradient(45deg,#4158d0,#c850c0);
+  background: linear-gradient(45deg,#4158d0,#c850c0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
 }
-.container-search .search:hover {
-  cursor: pointer;
+
+.wrap-table100 {
+  width: 1170px;
 }
-.container-search .search::before {
-  content: "";
-  position: absolute;
-  margin: auto;
-  top: 22px;
-  right: 0;
-  bottom: 0;
-  left: 22px;
-  width: 12px;
-  height: 2px;
-  background: white;
-  transform: rotate(45deg);
-  transition: all 0.5s;
+
+.table100-head th{ 
+    font-family:OpenSans-Regular;
+    font-size:18px;
+    color:#fff;
+    line-height:1.2;
+    font-weight:unset
 }
-.container-search .search::after {
-  content: "";
-  position: absolute;
-  margin: auto;
-  top: -5px;
-  right: 0;
-  bottom: 0;
-  left: -5px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  border: 2px solid white;
-  transition: all 0.5s;
+tbody tr:nth-child(even){
+    background-color:#f5f5f5
 }
-.container-search input {
-  font-family: "Inconsolata", monospace;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  outline: none;
-  border: none;
-  background: #0e2f44; /* crimson */
-  color: white;
-  text-shadow: 0 0 10px #fdbe34; /* crimson */
-  padding: 0 80px 0 20px;
-  border-radius: 30px;
-  box-shadow: 0 0 25px 0 #fdbe34, 0 20px 25px 0 rgba(0, 0, 0, 0.2); /* crimson */
-  transition: all 1s;
-  opacity: 0;
-  z-index: 5;
-  font-weight: bolder;
-  letter-spacing: 0.1em;
+tbody tr{
+    font-family:OpenSans-Regular;
+    font-size:15px;
+    color:gray;
+    line-height:1.2;
+    font-weight:unset
 }
-.container-search input:hover {
-  cursor: pointer;
-}
-.container-search input:focus {
-  width: 300px;
-  opacity: 1;
-  cursor: text;
-}
-.container-search input:focus ~ .search {
-  right: -250px;
-  background: #151515;
-  z-index: 6;
-}
-.container-search input:focus ~ .search::before {
-  top: 0;
-  left: 0;
-  width: 25px;
-}
-.container-search input:focus ~ .search::after {
-  top: 0;
-  left: 0;
-  width: 25px;
-  height: 2px;
-  border: none;
-  background: white;
-  border-radius: 0%;
-  transform: rotate(-45deg);
-}
-.container-search input::placeholder {
-  color: white;
-  opacity: 0.5;
-  font-weight: bolder;
+tbody tr:hover{
+    color:#555;
+    background-color:#f5f5f5;
+    cursor:pointer
 }

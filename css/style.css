@@ -10051,3 +10051,233 @@ hr.beautiful-line{
   width: 90%;
 }
 
+@font-face{
+    font-family:OpenSans-Regular;
+    src:url(/fonts/OpenSans/OpenSans-Regular.ttf)
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box
+}
+.limiter{
+    width:100%;
+    margin:0 auto
+}
+.container-table100{
+    width:100%;
+    min-height:100vh;
+    background:#c850c0;
+    background:-webkit-linear-gradient(45deg,#4158d0,#c850c0);
+    background:-o-linear-gradient(45deg,#4158d0,#c850c0);
+    background:-moz-linear-gradient(45deg,#4158d0,#c850c0);
+    background:linear-gradient(45deg,#4158d0,#c850c0);
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:33px 30px
+}
+.wrap-table100{
+    width:1170px
+}
+tabled{
+    border-spacing:1;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    width:100%;
+    margin:0 auto;
+    position:relative
+}
+tabled *{
+    position:relative
+}
+tabled tded,tabled thhh{
+    padding-left:8px
+}
+tabled theaded trrr{
+    height:60px;
+    background:#36304a
+}
+tabled tabody trrr{
+    height:50px
+}
+tabled tabody trrr:last-child{
+    border:0
+}
+tabled tded,tabled thhh{
+    text-align:left
+}
+tabled tded.l,tabled thhh.l{
+    text-align:right
+}
+tabled tded.c,tabled thhh.c{
+    text-align:center
+}
+tabled tded.r,tabled thhh.r{
+    text-align:center
+}
+.table100-head th{
+    font-family:OpenSans-Regular;
+    font-size:18px;
+    color:#fff;
+    line-height:1.2;
+    font-weight:unset
+}
+tabody trrr:nth-child(even){
+    background-color:#f5f5f5
+}
+tabody trrr{
+    font-family:OpenSans-Regular;
+    font-size:15px;
+    color:gray;
+    line-height:1.2;
+    font-weight:unset
+}
+tabody trrr:hover{
+    color:#555;
+    background-color:#f5f5f5;
+    cursor:pointer
+}
+.column1{
+    width:260px;
+    padding-left:40px
+}
+.column2{
+    width:160px
+}
+.column3{
+    width:245px
+}
+.column4{
+    width:110px;
+    text-align:right
+}
+.column5{
+    width:170px;
+    text-align:right
+}
+.column6{
+    width:222px;
+    text-align:right;
+    padding-right:62px
+}
+@media screen and (max-width:992px){
+    tabled{
+        display:block
+    }
+    tabled>*,tabled trrr,tabled tded,tabled thhh{
+        display:block
+    }
+    tabled theaded{
+        display:none
+    }
+    tabled tabody trrr{
+        height:auto;
+        padding:37px 0
+    }
+    tabled tabody trrr tded{
+        padding-left:40%!important;
+        margin-bottom:24px
+    }
+    tabled tabody trrr tded:last-child{
+        margin-bottom:0
+    }
+    tabled tabody trrr tded:before{
+        font-family:OpenSans-Regular;
+        font-size:14px;
+        color:#999;
+        line-height:1.2;
+        font-weight:unset;
+        position:absolute;
+        width:40%;
+        left:30px;
+        top:0
+    }
+    tabled tabody trrr tded:nth-child(1):before{
+        content:"Date"
+    }
+    tabled tabody trrr tded:nth-child(2):before{
+        content:"Order ID"
+    }
+    tabled tabody trrr tded:nth-child(3):before{
+        content:"Name"
+    }
+    tabled tabody trrr tded:nth-child(4):before{
+        content:"Price"
+    }
+    tabled tabody trrr tded:nth-child(5):before{
+        content:"Quantity"
+    }
+    tabled tabody trrr tded:nth-child(6):before{
+        content:"Total"
+    }
+    .column4,.column5,.column6{
+        text-align:left
+    }
+    .column4,.column5,.column6,.column1,.column2,.column3{
+        width:100%
+    }
+    tabody trrr{
+        font-size:14px
+    }
+}
+@media(max-width:576px){
+    .container-table100{
+        padding-left:15px;
+        padding-right:15px
+    }
+}
+
+/*Posts Effects*/
+
+.hover14 figured {
+	position: relative;
+}
+.hover14 figured::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+.hover14 figured:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+figured {
+	width: 300px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+figured:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
